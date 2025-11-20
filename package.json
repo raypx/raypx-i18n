@@ -1,6 +1,6 @@
 {
   "name": "@raypx/i18n",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Vite plugin for internationalization with compile-time optimization",
   "keywords": [
     "vite",

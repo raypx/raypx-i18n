@@ -1,5 +1,11 @@
 # @raypx/i18n
 
+## 0.0.4
+
+### Patch Changes
+
+- d3e0997: enhance configuration and add i18n plugin support
+
 ## 0.0.3
 
 ### Patch Changes
