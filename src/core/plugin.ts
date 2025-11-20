@@ -1,13 +1,13 @@
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import type { Plugin, ResolvedConfig } from 'vite';
-import type { I18nPluginOptions, LocaleMessages, I18nContext } from '../types';
-import { resolveOptions } from './options';
-import { createContext } from './context';
 import { createTransform } from '../transform';
+import type { I18nContext, I18nPluginOptions, LocaleMessages } from '../types';
+import { createContext } from './context';
+import { resolveOptions } from './options';
 
 const VIRTUAL_MODULE_ID = 'virtual:i18n';
-const RESOLVED_VIRTUAL_MODULE_ID = '\0' + VIRTUAL_MODULE_ID;
+const RESOLVED_VIRTUAL_MODULE_ID = `\0${VIRTUAL_MODULE_ID}`;
 
 export function i18nPlugin(userOptions: I18nPluginOptions = {}): Plugin {
   const options = resolveOptions(userOptions);

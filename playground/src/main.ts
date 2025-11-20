@@ -1,4 +1,4 @@
-import { locales, defaultLocale, availableLocales } from 'virtual:i18n';
+import { defaultLocale, locales } from 'virtual:i18n';
 import { createI18n, onLocaleChange } from '../../src/runtime';
 
 const i18n = createI18n({
@@ -33,6 +33,3 @@ if (toggleButton) {
 }
 
 updateUI();
-
-console.log('Available locales:', availableLocales);
-console.log('Current locale:', i18n.getLocale());

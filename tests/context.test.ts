@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { createContext, getNestedValue, flattenMessages } from '../src/core/context';
+import { describe, expect, it } from 'vitest';
+import { createContext, flattenMessages, getNestedValue } from '../src/core/context';
 import { resolveOptions } from '../src/core/options';
 
 describe('createContext', () => {

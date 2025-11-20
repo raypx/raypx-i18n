@@ -32,6 +32,16 @@
         "types": "./dist/runtime/index.d.cts",
         "default": "./dist/runtime/index.cjs"
       }
+    },
+    "vite": {
+      "import": {
+        "types": "./dist/vite/index.d.mts",
+        "default": "./dist/vite/index.mjs"
+      },
+      "require": {
+        "types": "./dist/vite/index.d.cts",
+        "default": "./dist/vite/index.cjs"
+      }
     }
   },
   "files": [
@@ -40,14 +50,15 @@
   "scripts": {
     "build": "tsdown",
     "changeset": "changeset",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
     "dev": "tsdown --watch",
     "format": "biome format --write .",
     "format:check": "biome format .",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
-    "check": "biome check .",
-    "check:fix": "biome check --write .",
     "playground": "pnpm -C playground dev",
+    "release": "pnpm build && pnpm changeset version && pnpm changeset publish && git push --follow-tags",
     "test": "vitest",
     "test:run": "vitest run",
     "typecheck": "tsc --noEmit"

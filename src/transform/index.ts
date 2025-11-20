@@ -23,8 +23,8 @@ export function createTransform(
 
   pattern.lastIndex = 0;
 
-  let match: RegExpExecArray | null;
-  while ((match = pattern.exec(code)) !== null) {
+  let match: RegExpExecArray | null = pattern.exec(code);
+  while (match !== null) {
     const key = match[1];
     ctx.translationKeys.add(key);
 
@@ -33,6 +33,7 @@ export function createTransform(
     }
 
     hasChanges = true;
+    match = pattern.exec(code);
   }
 
   if (!hasChanges) {

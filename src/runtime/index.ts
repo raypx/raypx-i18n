@@ -51,7 +51,9 @@ export function t(key: string, params?: Record<string, string | number>): string
 export function setLocale(locale: string): void {
   if (messages[locale]) {
     currentLocale = locale;
-    listeners.forEach((listener) => listener(locale));
+    listeners.forEach((listener) => {
+      listener(locale);
+    });
   }
 }
 

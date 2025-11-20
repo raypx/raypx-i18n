@@ -16,4 +16,11 @@ export default defineConfig([
     dts: true,
     sourcemap: true,
   },
+  {
+    entry: ['src/vite.ts'],
+    outDir: 'dist/vite',
+    format: ['cjs', 'esm'],
+    dts: true,
+    sourcemap: true,
+  },
 ]);
