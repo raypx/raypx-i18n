@@ -14,49 +14,56 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./runtime": {
-      "types": "./dist/runtime/index.d.ts",
-      "import": "./dist/runtime/index.mjs",
-      "require": "./dist/runtime/index.cjs"
+      "import": {
+        "types": "./dist/runtime/index.d.mts",
+        "default": "./dist/runtime/index.mjs"
+      },
+      "require": {
+        "types": "./dist/runtime/index.d.cts",
+        "default": "./dist/runtime/index.cjs"
+      }
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsdown",
+    "changeset": "changeset",
     "dev": "tsdown --watch",
     "lint": "eslint src --ext .ts",
     "playground": "pnpm -C playground dev",
+    "pre:enter": "changeset pre enter",
+    "pre:exit": "changeset pre exit",
     "prepublishOnly": "pnpm build",
+    "prerelease": "pnpm build && changeset publish",
+    "release": "pnpm build && changeset publish && changeset tag && git push --follow-tags",
     "test": "vitest",
     "test:run": "vitest run",
     "typecheck": "tsc --noEmit",
-    "changeset": "changeset",
-    "version": "changeset version",
-    "release": "pnpm build && changeset publish && changeset tag && git push --follow-tags",
-    "pre:enter": "changeset pre enter",
-    "pre:exit": "changeset pre exit",
-    "prerelease": "pnpm build && changeset publish"
+    "version": "changeset version"
   },
   "dependencies": {
     "magic-string": "^0.30.21"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
-    "@types/node": "^20.19.25",
+    "@types/node": "^24.10.1",
     "eslint": "^8.56.0",
-    "tsdown": "^0.9.9",
+    "tsdown": "^0.16.5",
     "typescript": "^5.9.3",
-    "vite": "^5.4.21",
-    "vitest": "^1.6.1"
+    "vite": "^7.2.2",
+    "vitest": "^4.0.10"
   },
   "peerDependencies": {
     "vite": "^5.0.0 || ^6.0.0"

@@ -8,7 +8,6 @@ export default defineConfig([
     clean: true,
     sourcemap: true,
     external: ['vite'],
-    exports: 'named',
   },
   {
     entry: ['src/runtime/index.ts'],
@@ -16,6 +15,5 @@ export default defineConfig([
     format: ['cjs', 'esm'],
     dts: true,
     sourcemap: true,
-    exports: 'named',
   },
 ])
