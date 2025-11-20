@@ -1,6 +1,6 @@
 {
   "name": "@raypx/i18n",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Vite plugin for internationalization with compile-time optimization",
   "keywords": [
     "vite",
@@ -43,15 +43,9 @@
     "dev": "tsdown --watch",
     "lint": "eslint src --ext .ts",
     "playground": "pnpm -C playground dev",
-    "pre:enter": "changeset pre enter",
-    "pre:exit": "changeset pre exit",
-    "prepublishOnly": "pnpm build",
-    "prerelease": "pnpm build && changeset publish",
-    "release": "pnpm build && changeset publish && changeset tag && git push --follow-tags",
     "test": "vitest",
     "test:run": "vitest run",
-    "typecheck": "tsc --noEmit",
-    "version": "changeset version"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "magic-string": "^0.30.21"
