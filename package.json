@@ -1,0 +1,58 @@
+{
+  "name": "@raypx/i18n",
+  "version": "0.1.0",
+  "description": "A Vite plugin for internationalization with compile-time optimization",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "i18n",
+    "internationalization",
+    "localization"
+  ],
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./runtime": {
+      "types": "./dist/runtime/index.d.ts",
+      "import": "./dist/runtime/index.mjs",
+      "require": "./dist/runtime/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "eslint src --ext .ts",
+    "playground": "pnpm -C playground dev",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "magic-string": "^0.30.21"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.25",
+    "eslint": "^8.56.0",
+    "tsdown": "^0.9.9",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vitest": "^1.6.1"
+  },
+  "peerDependencies": {
+    "vite": "^5.0.0 || ^6.0.0"
+  },
+  "packageManager": "pnpm@10.22.0"
+}
