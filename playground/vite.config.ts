@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import i18n from '../src'
+import { defineConfig } from 'vite';
+import i18n from '../src';
 
 export default defineConfig({
   plugins: [
@@ -9,4 +9,4 @@ export default defineConfig({
       functionName: 't',
     }),
   ],
-})
+});
